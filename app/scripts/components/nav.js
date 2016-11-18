@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router';
-import session from '../store';
+import store from '../store';
 
 export default React.createClass({
     render() {
+
+// console.log(window.localStorage);
 
       let nav;
 
@@ -19,7 +21,7 @@ export default React.createClass({
           <nav>
             <Link to = "votes">View Votes</Link>
             <Link to = "search">Search Bands</Link>
-            <Link to = "logout">Log Out</Link>
+            <input type="submit" value="Log Out" onClick={this.handleLogout}/>
           </nav>
         )
       }
@@ -29,5 +31,9 @@ export default React.createClass({
               {this.props.children}
           </div>
       )
+    },
+    handleLogout(e) {
+      e.preventDefault();
+      store.session.logout();
     }
 });

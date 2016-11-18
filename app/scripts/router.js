@@ -10,13 +10,8 @@ import session from './store';
 import Nav from './components/nav';
 import Login from './components/login';
 import Register from './components/register';
-
-// $(document).ajaxSend((e, xhr, opts) => {
-//   console.log('ajaxSend');
-//   xhr.setRequestHeader('application-type', 'REST');
-//   xhr.setRequestHeader('application-id', config.appId);
-//   xhr.setRequestHeader('secret-key', config.secret);
-// });
+import Search from './components/search';
+import Votes from './components/votes';
 
 
 const router = (
@@ -24,11 +19,10 @@ const router = (
         <Route path = "/" component = {Nav}>
           <Route path = "login" component = {Login} />
           <Route path = "register" component = {Register} />
+          <Route path = "search" component = {Search} />
+          <Route path = "votes" component = {Votes} />
         </Route>
     </Router>
 );
 
 export default router;
-
-// <Route path = "search" component = {} />
-// <Route path = "votes" component = {} />
