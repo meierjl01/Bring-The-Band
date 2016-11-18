@@ -15,6 +15,14 @@
     "plugins": [
         "react"
     ],
+    "globals": {
+      "describe": true,
+      "it": true,
+      "console": true,
+      "before": true,
+      "beforeEach": true,
+    },
+
     "rules": {
         "linebreak-style": [
             "error",

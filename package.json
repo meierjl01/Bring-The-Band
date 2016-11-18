@@ -23,7 +23,7 @@
     "start": "npm run build && npm run watch",
     "preinstall": "if ! command -v http-server; then npm install -g http-server; fi && if ! command -v mocha; then npm install -g mocha; fi",
     "postinstall": "npm start",
-    "test": "mocha --compilers js:babel-register --recursive"
+    "test": "mocha --require test/setup.js --compilers js:babel-register --recursive"
   },
   "browserify": {
     "transform": [
@@ -33,7 +33,8 @@
   "babel": {
     "sourceType": "module",
     "presets": [
-      "es2015"
+      "es2015",
+      "react"
     ]
   },
   "author": "nicerhugs",
