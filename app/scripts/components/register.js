@@ -7,7 +7,7 @@ export default React.createClass({
       session: store.session.toJSON()
     }
   },
-  componentWillMount() {
+  componentDidMount() {
     store.session.on('change', () => {
       this.setState({session: store.session.toJSON()})
     });
@@ -29,6 +29,10 @@ export default React.createClass({
     const username = document.querySelector('#username').value;
     const password = document.querySelector('#password').value;
     const confirmPw = document.querySelector('#confirm-pw').value;
-    store.session.register(email, username, password, confirmPw);
+    if(store.session.validatePassword(password, confirmPw)) {
+      store.session.register(email, username, password, confirmPw);
+    } else {
+      alert('Passwords do not match');
+    }
   }
 });

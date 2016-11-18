@@ -11,12 +11,12 @@ import Nav from './components/nav';
 import Login from './components/login';
 import Register from './components/register';
 
-$(document).ajaxSend((e, xhr, opts) => {
-  console.log('ajaxSend');
-  xhr.setRequestHeader('application-type', 'REST');
-  xhr.setRequestHeader('application-id', config.appId);
-  xhr.setRequestHeader('secret-key', config.secret);
-});
+// $(document).ajaxSend((e, xhr, opts) => {
+//   console.log('ajaxSend');
+//   xhr.setRequestHeader('application-type', 'REST');
+//   xhr.setRequestHeader('application-id', config.appId);
+//   xhr.setRequestHeader('secret-key', config.secret);
+// });
 
 
 const router = (

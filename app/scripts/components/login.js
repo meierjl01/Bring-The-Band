@@ -7,14 +7,14 @@ export default React.createClass({
       session: store.session.toJSON()
     }
   },
-  componentWillMount() {
+  componentDidMount() {
     store.session.on('change', () => {
         this.setState({session: store.session.toJSON()})
     });
   },
   render() {
     return (
-      <div>
+      <div id="login">
         <form>
           <input id="email" type="email" placeholder="Email"/>
           <input id="password" type="password" placeholder="Password"/>
