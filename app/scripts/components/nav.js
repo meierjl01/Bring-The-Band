@@ -3,13 +3,19 @@ import { Link } from 'react-router';
 import store from '../store';
 
 export default React.createClass({
+    getInitialState() {
+      return {}
+    },
+    componentWillMount() {
+      store.session.on('change', () => {
+        this.setState(store.session.get['user-token']);
+      })
+    },
     render() {
-
-// console.log(window.localStorage);
 
       let nav;
 
-      if(!window.localStorage.username) {
+      if(!window.localStorage['user-token']) {
         nav = (
           <nav>
             <Link to = "login">Log In</Link>
@@ -21,7 +27,7 @@ export default React.createClass({
           <nav>
             <Link to = "votes">View Votes</Link>
             <Link to = "search">Search Bands</Link>
-            <input type="submit" value="Log Out" onClick={this.handleLogout}/>
+            <input id="logout" type="submit" value="Log Out" onClick={this.handleLogout}/>
           </nav>
         )
       }

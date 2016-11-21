@@ -16,8 +16,8 @@ export default React.createClass({
     return (
       <div id="login">
         <form>
-          <input id="email" type="email" placeholder="Email"/>
-          <input id="password" type="password" placeholder="Password"/>
+          <input ref="email" id="email" type="email" placeholder="Email"/>
+          <input ref="password" id="password" type="password" placeholder="Password"/>
           <input id="login" type="submit" value="Log In" onClick={this.handleLogin}/>
         </form>
       </div>
@@ -25,8 +25,8 @@ export default React.createClass({
   },
   handleLogin(e) {
     e.preventDefault();
-    const email = document.querySelector('#email').value;
-    const password = document.querySelector('#password').value;
+    const email = this.refs.email.value;
+    const password = this.refs.password.value;
     store.session.login(email, password);
   }
 });

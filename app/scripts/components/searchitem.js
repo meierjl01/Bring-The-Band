@@ -30,6 +30,6 @@ export default React.createClass({
     )
   },
   handleVote() {
-    store.bands.addVote({name: this.props.band.name, photo: this.props.band.images[0].url, votes: 1});
+    store.bands.addVote({name: this.props.band.name, photo: this.props.band.images[0].url, votes: 1, id: this.props.band.id});
   }
 });

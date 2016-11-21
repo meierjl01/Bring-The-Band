@@ -2,25 +2,39 @@
     // border-bottom: 2px solid white;
     // display: block;
     // margin-bottom: 2em;
-  h1 {
-    display: inline-block;
-    text-align: left;
-    vertical-align: center;
-  }
-  nav {
-    display: inline-block;
-    float: right;
-    vertical-align: center;
-    a {
+    h1 {
+        display: inline-block;
+        text-align: left;
+        vertical-align: center;
+    }
+
+    nav {
+        display: inline-block;
+        float: right;
+        vertical-align: center;
+        margin-top: 9px;
+
+        a {
+            border: 2px solid white;
+            font-size: .75em;
+            margin: 1em;
+            padding: 1em;
+            border-radius: 20px;
+        }
+
+    #logout {
+      background-color: black;
+      font-size: .75em;
+      color: white;
       border: 2px solid white;
-      margin: 1em;
+      margin: 0.5em;
       padding: 1em;
       border-radius: 20px;
     }
-  }
-  // img {
-  //   width: 50%;
-  //   margin: 2em;
-  //
-  // }
+    }
+    // img {
+    //   width: 50%;
+    //   margin: 2em;
+    //
+    // }
 }

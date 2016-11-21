@@ -15,20 +15,20 @@ export default React.createClass({
   render() {
     return (
       <form id="register">
-        <input id="email" type="email" placeholder="Email" />
-        <input id="username" type="text" placeholder="Username"/>
-        <input id="password" type="password" placeholder="Password" />
-        <input id="confirm-pw" type="password" placeholder="Confirm Password" />
+        <input ref="email" id="email" type="email" placeholder="Email" />
+        <input ref="username" id="username" type="text" placeholder="Username"/>
+        <input ref="password" id="password" type="password" placeholder="Password" />
+        <input ref="confirmPw" id="confirm-pw" type="password" placeholder="Confirm Password" />
         <input id="register" type="submit" value="Register Now" onClick={this.handleRegister} />
       </form>
     )
   },
   handleRegister(e) {
     e.preventDefault();
-    const email = document.querySelector('#email').value;
-    const username = document.querySelector('#username').value;
-    const password = document.querySelector('#password').value;
-    const confirmPw = document.querySelector('#confirm-pw').value;
+    const email = this.refs.email.value;
+    const username = this.refs.username.value;
+    const password = this.refs.password.value;
+    const confirmPw = this.refs.confirmPw.value;
     if(store.session.validatePassword(password, confirmPw)) {
       store.session.register(email, username, password, confirmPw);
     } else {

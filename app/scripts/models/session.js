@@ -42,9 +42,9 @@ export default Backbone.Model.extend({
         });
     },
 
-    login(login, password) {
+    login(email, password) {
         this.save({
-            login,
+            login: email,
             password
         }, {
             headers: {
@@ -53,12 +53,9 @@ export default Backbone.Model.extend({
                 'Content-Type': 'application/json',
                 'application-type': 'REST',
             },
+            wait: true,
             url: 'https://api.backendless.com/v1/users/login',
             success: (response) => {
-                this.set({
-                    login,
-                    password
-                });
                 window.localStorage.setItem('user-token', response['user-token']);
                 window.localStorage.setItem('email', response['email']);
                 hashHistory.push('/');
@@ -69,7 +66,7 @@ export default Backbone.Model.extend({
         $.ajax({
             headers: {
                 'application-id': config.appId,
-                'secret-key': config.secretKey,
+                'secret-key': config.secret,
                 'application-type': 'REST'
             },
             url: 'https://api.backendless.com/v1/users/logout',

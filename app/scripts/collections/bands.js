@@ -23,20 +23,21 @@ export default Backbone.Collection.extend({
             },
         });
     },
-    //change to this.create
+    //change back to this.create?
     addVote({
         name,
         image,
-        votes
+        votes,
+        id
     }) {
       $.ajax({
         type: 'POST',
         url: 'https://api.backendless.com/v1/data/artists',
         contentType: 'application/json',
-        data: JSON.stringify({name, image, votes}),
+        data: JSON.stringify({name, image, votes, id}),
         success: () => {
           hashHistory.push('votes');
-        }      
+        }
     });
 }
 });
