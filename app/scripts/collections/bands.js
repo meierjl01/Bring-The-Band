@@ -1,11 +1,15 @@
 import Backbone from 'backbone';
 import Band from '../models/band';
 import $ from 'jquery';
+import config from '../config';
+import {
+    hashHistory
+} from 'react-router';
 
 export default Backbone.Collection.extend({
     model: Band,
 
-    //this.fetch
+    //change to this.fetch
     getBands(artist) {
         $.ajax({
             url: 'https://api.spotify.com/v1/search',
@@ -13,29 +17,26 @@ export default Backbone.Collection.extend({
                 q: artist,
                 type: 'artist'
             },
-            success: (response) => {
-                this.add(response);
+            success: (data) => {
+                this.reset();
+                this.add(data);
             },
         });
     },
+    //change to this.create
     addVote({
         name,
-        photo,
+        image,
         votes
     }) {
-        this.create({
-            name,
-            photo,
-            votes
-        }, {
-            headers: {
-                'application-id': config.appId,
-                'secret-key': config.secret,
-                'Content-Type': 'application/json',
-                'application-type': 'REST'
-            },
-            url: 'https://api.backendless.com/v1/data/bands'
-        });
-    }
-
+      $.ajax({
+        type: 'POST',
+        url: 'https://api.backendless.com/v1/data/artists',
+        contentType: 'application/json',
+        data: JSON.stringify({name, image, votes}),
+        success: () => {
+          hashHistory.push('votes');
+        }      
+    });
+}
 });

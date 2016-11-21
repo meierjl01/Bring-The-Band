@@ -15,7 +15,8 @@ export default Backbone.Model.extend({
     defaults: {
         username: '',
         email: '',
-        'user-token': ''
+        'user-token': '',
+        votedArtists: []
     },
 
     validatePassword(password, confirmPw) {

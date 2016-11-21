@@ -1,0 +1,47 @@
+#container {
+    //how to get rid of blue box around search box;
+    #search {
+        text-align: center;
+        margin: 2em;
+
+        #search-box {
+            margin: 1em;
+            padding: 1em;
+            width: 75%;
+            border-radius: 20px;
+        }
+
+        #search-button {
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+            margin: 0.5em;
+            padding: 1em;
+            border-radius: 20px;
+        }
+
+        #single-search-result {
+            margin: 1em;
+            border: 2px solid white;
+            width: 45%;
+            display: inline-block;
+            padding: 0.5em;
+
+            #vote-button {
+                background-color: black;
+                color: white;
+                margin: 1em;
+                border: 2px solid white;
+            }
+
+            .fa {
+                margin: 1em;
+            }
+
+            img {
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+}

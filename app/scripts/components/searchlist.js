@@ -3,7 +3,7 @@ import SearchItem from './searchitem';
 
 export default React.createClass({
   render() {
-    console.log(this.props.bands);
+    // console.log(this.props.bands);
     let BandsList = this.props.bands.map((band, i, arr) => {
       return (
         <SearchItem key={i} band={band} />

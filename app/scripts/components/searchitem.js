@@ -6,17 +6,21 @@ export default React.createClass({
     let artistInfo;
     if(this.props.band.images[0] !== undefined) {
       artistInfo =
-          <li>
+          <li id="single-search-result">
               <img src={this.props.band.images[0].url} />
               <span>{this.props.band.name}</span>
-              <input type="button" value="Vote Now!" onClick={this.handleVote} />
+              <button type="submit" id="vote-button">
+                 Vote<i className="fa fa-music" aria-hidden="true" onClick={this.handleVote}></i>
+              </button>
           </li>
     } else {
       artistInfo =
-        <li>
+        <li id="single-search-result">
           <img src= 'http://www.novelupdates.com/img/noimagefound.jpg' />
-          <span>{this.props.band.name}</span>
-          <input type="button" value="Vote Now!" onClick={this.handleVote} />
+          <div id="band-name">{this.props.band.name}</div>
+          <button type="submit" id="vote-button">
+             Vote<i className="fa fa-music" aria-hidden="true" onClick={this.handleVote}></i>
+          </button>
         </li>
     }
     return (
@@ -24,5 +28,8 @@ export default React.createClass({
               {artistInfo}
             </div>
     )
+  },
+  handleVote() {
+    store.bands.addVote({name: this.props.band.name, photo: this.props.band.images[0].url, votes: 1});
   }
 });

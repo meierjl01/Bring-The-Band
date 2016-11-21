@@ -1,0 +1,30 @@
+#container {
+    #register {
+      text-align: center;
+      margin: 2em;
+        #email {
+          margin: 1em;
+          padding: 1em;
+        }
+        #username{
+          margin: 1em;
+          padding: 1em;
+        }
+        #password {
+          margin: 1em;
+          padding: 1em;
+        }
+        #confirm-pw {
+          margin: 1em;
+          padding: 1em;
+        }
+        #register {
+          background-color: black;
+          color: white;
+          border: 2px solid white;
+          margin: 1em;
+          padding: 1em;
+          border-radius: 20px;
+        }
+    }
+}

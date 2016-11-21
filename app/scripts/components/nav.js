@@ -26,7 +26,8 @@ export default React.createClass({
         )
       }
         return (
-          <div>
+          <div id="nav-container">
+            <h1>Bring the Band</h1>
               {nav}
               {this.props.children}
           </div>

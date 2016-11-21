@@ -14,9 +14,9 @@ export default React.createClass({
     });
   },
   render() {
-    console.log(this.state.bands[0].artists.items);
+    // console.log(this.state.bands[0].artists.items);
     return (
-      <div>
+      <div id="search">
         <form onSubmit={this.handleSearch}>
           <input id="search-box" type="text" placeholder="Search for bands here" />
           <input id="search-button" type="submit" value="Search" />
@@ -27,7 +27,7 @@ export default React.createClass({
   },
   handleSearch(e) {
     e.preventDefault();
-    console.log('clicked search');
+    // console.log('clicked search');
     let artist = document.getElementById('search-box').value;
     store.bands.getBands(artist);
   }

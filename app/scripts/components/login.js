@@ -18,7 +18,7 @@ export default React.createClass({
         <form>
           <input id="email" type="email" placeholder="Email"/>
           <input id="password" type="password" placeholder="Password"/>
-          <input type="submit" value="Log In" onClick={this.handleLogin}/>
+          <input id="login" type="submit" value="Log In" onClick={this.handleLogin}/>
         </form>
       </div>
     )
