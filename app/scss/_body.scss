@@ -3,6 +3,7 @@ body {
   margin: 2em;
   background: url("../../assets/images/dj.jpeg") no-repeat center center;
   background-size: cover;
+  background-attachment: fixed;
   height: 55rem;
   input {
     outline: none;

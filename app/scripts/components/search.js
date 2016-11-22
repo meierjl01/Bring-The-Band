@@ -16,8 +16,8 @@ export default React.createClass({
   render() {
     // console.log(this.state.bands[0].artists.items);
     return (
-      <div id="search">
-        <form onSubmit={this.handleSearch}>
+      <div id="search-container">
+        <form id="search" onSubmit={this.handleSearch}>
           <input id="search-box" type="text" placeholder="Search for bands here" />
           <input id="search-button" type="submit" value="Search" />
         </form>

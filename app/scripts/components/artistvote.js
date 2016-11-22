@@ -6,8 +6,8 @@ export default React.createClass({
     // console.log(this.props.votedArtist);
     return (
       <li id="voted-artist">
-        <img src = {this.props.votedArtist.image} width="200" height="200"/>
         <div>{this.props.votedArtist.name}</div>
+        <img src = {this.props.votedArtist.image} width="150" height="150"/>
         <div>Artist Votes: {this.props.votedArtist.votes}</div>
       </li>
     )

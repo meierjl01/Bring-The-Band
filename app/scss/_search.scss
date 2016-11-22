@@ -1,14 +1,18 @@
 #container {
 
-    #search {
+    #search-container {
         text-align: center;
         margin: 2em;
+        border-width: thin;
+        padding-bottom: 0.5em;
+        border-bottom: 2px dotted #5EC352;
 
         #search-box {
             margin: 1em;
-            padding: 1em;
-            width: 75%;
+            padding: .75em;
+            width: 70%;
             border-radius: 20px;
+            font-family: 'EB Garamond', serif;
         }
 
         #search-button {
@@ -16,27 +20,36 @@
             color: white;
             border: 2px solid #5EC352;
             margin: 0.5em;
-            padding: 1em;
+            padding: .75em;
             border-radius: 20px;
+            font-family: 'EB Garamond', serif;
         }
 
         #single-search-result {
             margin: 1em;
-            border: 2px solid white;
-            width: 45%;
+            border: 2px solid #5EC352;
+            width: 20%;
             display: inline-block;
             padding: 0.5em;
+            background-color: black;
+            font-family: 'EB Garamond', serif;
+
+            #band-name {
+              font-size: .75em;
+            }
 
             #vote-button {
-                background-color: #24004C;
+                background-color: #E50000;
                 color: white;
-                margin: 1em;
+                margin: .5em;
                 border: 2px solid #5EC352;
+                font-size: .75em;
             }
 
             .fa {
-                margin: 1em;
+                margin: .5em;
                 color: #5EC352;
+
             }
 
             img {

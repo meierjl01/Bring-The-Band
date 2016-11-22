@@ -10,11 +10,9 @@ export default React.createClass({
       );
     });
     return(
-      <div>
         <ul id="bands-list">
           {BandsList}
         </ul>
-      </div>
     )
   }
 });

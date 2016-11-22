@@ -33,7 +33,7 @@ export default React.createClass({
       }
         return (
           <div id="nav-container">
-            <h1>Bring the Band</h1>
+            <h1>Bring the Band!</h1>
               {nav}
               {this.props.children}
           </div>

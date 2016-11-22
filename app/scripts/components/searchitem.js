@@ -5,28 +5,18 @@ export default React.createClass({
   render() {
     let artistInfo;
     if(this.props.band.images[0] !== undefined) {
-      artistInfo =
-          <li id="single-search-result">
-              <img src={this.props.band.images[0].url} />
-              <span>{this.props.band.name}</span>
-              <button type="submit" id="vote-button">
-                 Vote<i className="fa fa-music" aria-hidden="true" onClick={this.handleVote}></i>
-              </button>
-          </li>
+      artistInfo = <img src={this.props.band.images[0].url} height="150" width="1500"/>;
     } else {
-      artistInfo =
+      artistInfo = <img src= 'http://www.novelupdates.com/img/noimagefound.jpg' height="150" width="150"/>
+    }
+    return (
         <li id="single-search-result">
-          <div id="band-name">{this.props.band.name}</div>
-          <img src= 'http://www.novelupdates.com/img/noimagefound.jpg' />
+            {this.props.band.name}
+              {artistInfo}
           <button type="submit" id="vote-button">
              Vote<i className="fa fa-music" aria-hidden="true" onClick={this.handleVote}></i>
           </button>
         </li>
-    }
-    return (
-            <div>
-              {artistInfo}
-            </div>
     )
   },
   handleVote() {
