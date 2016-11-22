@@ -4,11 +4,11 @@ import store from '../store';
 
 export default React.createClass({
     getInitialState() {
-      return {}
+      return { ['user-token']: store.session.get['user-token']}
     },
-    componentWillMount() {
+    componentDidMount() {
       store.session.on('change', () => {
-        this.setState(store.session.get['user-token']);
+        this.setState({['user-token']: store.session.get['user-token']});
       })
     },
     render() {
@@ -17,7 +17,7 @@ export default React.createClass({
 
       if(!window.localStorage['user-token']) {
         nav = (
-          <nav>
+          <nav id="first-nav">
             <Link to = "login">Log In</Link>
             <Link to = "register">Register</Link>
           </nav>

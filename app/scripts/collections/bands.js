@@ -2,9 +2,6 @@ import Backbone from 'backbone';
 import Band from '../models/band';
 import $ from 'jquery';
 import config from '../config';
-import {
-    hashHistory
-} from 'react-router';
 
 export default Backbone.Collection.extend({
     model: Band,
@@ -22,22 +19,5 @@ export default Backbone.Collection.extend({
                 this.add(data);
             },
         });
-    },
-    //change back to this.create?
-    addVote({
-        name,
-        image,
-        votes,
-        id
-    }) {
-      $.ajax({
-        type: 'POST',
-        url: 'https://api.backendless.com/v1/data/artists',
-        contentType: 'application/json',
-        data: JSON.stringify({name, image, votes, id}),
-        success: () => {
-          hashHistory.push('votes');
-        }
-    });
-}
+    }
 });

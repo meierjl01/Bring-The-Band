@@ -10,7 +10,7 @@ export default React.createClass({
   },
   componentDidMount() {
     store.bands.on('update change', () => {
-      this.setState({bands: store.bands.toJSON()})
+      this.setState({bands: store.bands.toJSON()});
     });
   },
   render() {

@@ -5,24 +5,28 @@ import VotesList from './voteslist';
 export default React.createClass({
   getInitialState() {
     return {
-      session: store.session.toJSON(),
-      votes: store.votes.toJSON(),
+      voted: store.votes.toJSON()
     }
   },
   componentWillMount() {
     store.votes.fetch();
   },
   componentDidMount() {
-    store.session.on('change update', () => {
-      this.setState({votes: store.votes.toJSON()})
-    });
+    store.votes.fetch();
+    store.votes.on('change update', this.updateStatus);
+  },
+  componentWillUnmount() {
+    store.votes.off('update change', this.updateStatus);
   },
   render() {
     return (
       <div id="votes-container">
         <h2>Votes:</h2>
-        <VotesList votedArtists={this.state.votes} />
+        <VotesList votedArtists={this.state.voted} />
       </div>
     )
+  },
+  updateStatus() {
+    this.setState({voted: store.votes.toJSON()})
   }
 });
