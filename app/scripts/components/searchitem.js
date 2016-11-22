@@ -16,8 +16,8 @@ export default React.createClass({
     } else {
       artistInfo =
         <li id="single-search-result">
-          <img src= 'http://www.novelupdates.com/img/noimagefound.jpg' />
           <div id="band-name">{this.props.band.name}</div>
+          <img src= 'http://www.novelupdates.com/img/noimagefound.jpg' />
           <button type="submit" id="vote-button">
              Vote<i className="fa fa-music" aria-hidden="true" onClick={this.handleVote}></i>
           </button>
