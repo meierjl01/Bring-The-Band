@@ -24,7 +24,7 @@ describe('vote model', () => {
 
   it('should have an attribute id of objectId', () => {
       expect(vote).to.have.property('idAttribute');
-      expect(vote.idAttribute).to.equal(objectId);
+      expect(vote.idAttribute).to.equal('objectId');
   });
 
   it('should have a default name value of an empty string', () => {

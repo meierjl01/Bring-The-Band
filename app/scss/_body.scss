@@ -1,11 +1,10 @@
 body {
-  background-color: black;
   color: white;
   margin: 2em;
-  // background-image: url("../../assets/images/dj.jpeg");
-  // img {
-  //   width: 50%;
-  // }
+
+  background: url("../../assets/images/dj.jpeg") no-repeat center center;
+  background-size: cover;
+  height: 55rem;
   input {
     outline: none;
   }
