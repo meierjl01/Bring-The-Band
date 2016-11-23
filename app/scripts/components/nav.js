@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import store from '../store';
+import Home from './home';
 
 export default React.createClass({
     getInitialState() {
@@ -33,8 +34,9 @@ export default React.createClass({
       }
         return (
           <div id="nav-container">
-            <h1>Bring the Band!</h1>
+            <h1>Bring the Band</h1>
               {nav}
+              <Home/>
               {this.props.children}
           </div>
       )

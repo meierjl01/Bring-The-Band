@@ -5,12 +5,11 @@
         margin: 2em;
         border-width: thin;
         padding-bottom: 0.5em;
-        border-bottom: 2px dotted #5EC352;
 
         #search-box {
             margin: 1em;
             padding: .75em;
-            width: 70%;
+            width: 50%;
             border-radius: 20px;
             font-family: 'EB Garamond', serif;
         }
@@ -18,10 +17,10 @@
         #search-button {
             background-color: #24004C;
             color: white;
-            border: 2px solid #5EC352;
             margin: 0.5em;
             padding: .75em;
             border-radius: 20px;
+            border: 2px solid #5EC352;
             font-family: 'EB Garamond', serif;
         }
 
