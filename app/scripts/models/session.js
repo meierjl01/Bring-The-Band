@@ -58,25 +58,6 @@ export default Backbone.Model.extend({
                   hashHistory.push('/');
         }
       })
-        // this.save({
-        //     login: email,
-        //     password
-        // }, {
-        //     headers: {
-        //         'application-id': config.appId,
-        //         'secret-key': config.secret,
-        //         'Content-Type': 'application/json',
-        //         'application-type': 'REST',
-        //     },
-        //     wait: true,
-        //     url: 'https://api.backendless.com/v1/users/login',
-        //     success: (response) => {
-        //         window.localStorage.setItem('user-token', response['user-token']);
-        //         window.localStorage.setItem('email', response['email']);
-        //         window.localStorage.setItem('ownerId',response.ownerId);
-        //         hashHistory.push('/');
-        //     }
-        // });
     },
     logout() {
         $.ajax({
