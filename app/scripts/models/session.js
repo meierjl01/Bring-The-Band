@@ -15,18 +15,16 @@ export default Backbone.Model.extend({
     defaults: {
         username: '',
         email: '',
-        'user-token': '',
-        votedArtists: []
+        'user-token': ''
     },
 
     validatePassword(password, confirmPw) {
         if (password === confirmPw) return true;
     },
 
-    register(email, username, password) {
+    register(email, password) {
         this.save({
             email,
-            username,
             password
         }, {
             headers: {
@@ -43,24 +41,42 @@ export default Backbone.Model.extend({
     },
 
     login(email, password) {
-        this.save({
-            login: email,
-            password
-        }, {
-            headers: {
-                'application-id': config.appId,
-                'secret-key': config.secret,
-                'Content-Type': 'application/json',
-                'application-type': 'REST',
-            },
-            wait: true,
-            url: 'https://api.backendless.com/v1/users/login',
-            success: (response) => {
-                window.localStorage.setItem('user-token', response['user-token']);
-                window.localStorage.setItem('email', response['email']);
-                hashHistory.push('/');
-            }
-        });
+
+      $.ajax({
+        type: 'POST',
+        url: 'https://api.backendless.com/v1/users/login',
+        contentType: 'application/json',
+        data: JSON.stringify({
+          login: email,
+          password
+        }),
+        success: (response) => {
+          this.set(response);
+                  window.localStorage.setItem('user-token', response['user-token']);
+                  window.localStorage.setItem('email', response['email']);
+                  window.localStorage.setItem('ownerId',response.ownerId);
+                  hashHistory.push('/');
+        }
+      })
+        // this.save({
+        //     login: email,
+        //     password
+        // }, {
+        //     headers: {
+        //         'application-id': config.appId,
+        //         'secret-key': config.secret,
+        //         'Content-Type': 'application/json',
+        //         'application-type': 'REST',
+        //     },
+        //     wait: true,
+        //     url: 'https://api.backendless.com/v1/users/login',
+        //     success: (response) => {
+        //         window.localStorage.setItem('user-token', response['user-token']);
+        //         window.localStorage.setItem('email', response['email']);
+        //         window.localStorage.setItem('ownerId',response.ownerId);
+        //         hashHistory.push('/');
+        //     }
+        // });
     },
     logout() {
         $.ajax({
